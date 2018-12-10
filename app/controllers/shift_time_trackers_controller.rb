@@ -1,0 +1,2 @@
+class ShiftTimeTrackersController < ApplicationController
+end

@@ -1,0 +1,2 @@
+class ShiftTimeTracker < ApplicationRecord
+end
