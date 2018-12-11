@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_10_221440) do
+ActiveRecord::Schema.define(version: 2018_12_10_235359) do
 
   create_table "shift_time_trackers", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
     t.datetime "checkin"
@@ -20,11 +20,13 @@ ActiveRecord::Schema.define(version: 2018_12_10_221440) do
   end
 
   create_table "users", options: "ENGINE=InnoDB DEFAULT CHARSET=latin1", force: :cascade do |t|
+    t.bigint "shift_time_trackers_id"
     t.string "name"
     t.datetime "shift_start"
     t.datetime "shift_end"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["shift_time_trackers_id"], name: "index_users_on_shift_time_trackers_id"
   end
 
 end
